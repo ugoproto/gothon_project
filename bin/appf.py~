@@ -1,0 +1,98 @@
+#!/bin/python2
+# -*- coding: utf-8 -*-
+
+# run the script with python bin/app.py
+# launch the browser with http://0.0.0.0:8080/
+# export PYTHONPATH=$PYTHONPATH:. in Linux
+# $env:PYTHONPATH = "$env:PYTHONPATH;." in PowerShell
+# Documentation:
+# http://webpy.org/cookbook/session_with_reloader
+# http://webpy.org/cookbook/sessions
+
+import sys
+sys.path.append('.') # '/var/www/'
+
+import web
+from gothonmap import map
+
+# web.config.debug = True
+
+urls = (
+    '/', 'Index',
+    '/f', 'Indexf',    
+    '/game', 'GameEngine',
+    '/jeu', 'JeuEngine'    
+)
+
+app = web.application(urls, globals())
+
+if web.config.get('_session') is None:
+    store = web.session.DiskStore('sessions')
+    session = web.session.Session(app, store, 
+                                  initializer = {'room': None})
+    web.config._session = session
+else:
+    session = web.config._session
+
+render = web.template.render('templates/', base = "layout_plus") # /templates/layout_plus.html
+
+# ENGLISH
+class Index(object):
+	"""
+	
+	"""
+	
+	def GET(self): # this is used to "setup" the session with starting values
+		session.room = map.START
+		web.seeother("/game")
+
+# FRANCAIS
+class Indexf(object):
+	"""
+	
+	"""
+	
+	def GET(self): # this is used to "setup" the session with starting values
+		session.room = map.START
+		web.seeother("/jeu")
+
+# ENGLISH
+class GameEngine(object):
+	"""
+	
+	"""
+
+	def GET(self):
+		if session.room:
+			return render.show_room_plus(room = session.room) # /templates/show_room_plus.html
+
+	def POST(self):
+		form = web.input(action = None)
+		if (session.room.name == "The Armory") and (session.room.paths.has_key(form.action) == False):
+			form.action = '*'
+		if session.room and form.action: # if all true, execute the next line; otherwise, jump over it
+			if session.room.paths.has_key(form.action): # if the entry is what is expected in the dictionary (excluding errors, mispelling, no entry at all), it executes the next line; otherwise, it jumps over it
+				session.room = session.room.go(form.action)
+		web.seeother("/game")
+
+# FRANCAIS
+class JeuEngine(object):
+	"""
+	
+	"""
+
+	def GET(self):
+		if session.room:
+			return render.show_room_plusf(room = session.room) # /templates/show_room_plusf.html
+
+	def POST(self):
+		form = web.input(action = None)
+		if (session.room.namef == "L'Arsenal") and (session.room.paths.has_key(form.action) == False):
+			form.action = '*'
+		if session.room and form.action: # if all true, execute the next line; otherwise, jump over it
+			if session.room.paths.has_key(form.action): # if the entry is what is expected in the dictionary (excluding errors, mispelling, no entry at all), it executes the next line; otherwise, it jumps over it
+	    		session.room = session.room.go(form.action)
+		web.seeother("/jeu")
+
+if __name__ == "__main__":
+    app.run()

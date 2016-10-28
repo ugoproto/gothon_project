@@ -1,0 +1,30 @@
+
+a = 'lower_deck_cursive'
+b = 'aaa'
+
+if a in ['lower_deck_cursive', 'armory', 'the_bridge', 'escape_pod', 'death', 'final_fight', 'win']:
+	print "yes"
+else:
+	print "no"
+
+if b in ['lower_deck_cursive', 'armory', 'the_bridge', 'escape_pod', 'death', 'final_fight', 'win']:
+	print "yes"
+else:
+	print "no"
+	
+
+
+
+
+ \nNavette de secours \n\nComme tu t’apprêtes à ouvrir le sas, une voix \nen toi te murmure: \’Attention… elles sont \npiégées. Ne prends pas les numéros impairs.\’ \n
+
+
+ \nNavette de secours \n\nLa voix te murmure encore: \’Attention…\’ \n
+
+ \nÉpilogue \n\n Dans \nl’obscurité, tu aperçois un voyant rouge \nflotter vers toi. Ce crépitement? Tu fais face \nà un drone de combat. En moins de deux, tu es \ndésintégré alors que le drone décharge son \nlaser. \n\nFIN \n
+
+
+ \nÉpilogue \n\nTu frappes le bouton d’ouverture, le sas \ns’ouvre, tu bondis à l’intérieur, puis tu \nenclenches la procédure d’évacuation. La \nnavette s’éjecte dans l’espace, puis ajuste \nsa trajectoire sur la planète. VICTOIRE! Tu \nregardes dans le hublot et tu assistes à \nl’explosion de ton vaisseau. L’onde de choc \nemporte le vaisseau gothon… \n\nFIN \n
+
+
+

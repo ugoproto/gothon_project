@@ -1,0 +1,185 @@
+#!/bin/python2
+# -*- coding: utf-8 -*-
+
+language_ = u"\nIn english / en français"
+hero_ = [u"What is your hero's name?",u"Quel est le nom de ton héro?"]
+chapter_ = [u"CHAPTER", u"CHAPITRE"]
+###############################################
+quips_ = [
+        "\nYou died. Miserably... As always, you kinda suck. Only this time, it's fatal.\n\nTHE END\n",
+         "\nYour mom would have be proud...if she had been smarter.\n\nTHE END\n",
+         "\nYou're history. Luckily, we forget loosers. \n\nTHE END\n",
+         "\nGone... I once had a small puppy that was better at this.\n\nTHE END\n"
+         ]
+#+++ 
+###############################################
+centralcorridor_ = [
+"\nThe Gothons have invaded your ship. The whole \ncrew is dead. All? You were left for dead, but you \nwere simply sleeping. Anyway, you are the last \nsurvivor. \n\nThis ship must not fall into enemy's hands. You \nmust reach the armory and get the neutron bomb. \n\nYou're running down the central corridor when a \nGothon jumps out, red scaly skin, dark grimy teeth, \nand a clown costume flowing around his body. \nHe's blocking the door to the armory. He's about to \npull a weapon to blast you. \n\nWhat do you do? \n[a] shoot!\n[b] dodge!\n[c] tell a joke",
+"F"
+]
+
+centralcorridor_a_ = [
+"\nQuick on the draw, you yank out your blaster and \nfire it at the Gothon. Your laser hits his costume, \nbut misses him entirely. This completely ruins his \nbrand new costume his mother bought him. He flies \ninto an insane rage and blast you repeatedly in the \nface until you are dead. Then, he eats you.",
+"F"
+]
+
+centralcorridor_b_ = [
+"\nYou dodge, weave, slip and slide right as the \nGothon's blaster cranks a laser past your head. In \nthe middle of your artful dodge, your foot slips, you \nbang your head on the wall, and pass out. You wake \nup shortly after, only to die as the Gothon stomps \non your head and eats you.",
+"F"
+]
+
+centralcorridor_c_ = [
+"\nLucky for you they made you learn Gothon insults \nin the academy.  You tell the one Gothon joke you \nknow. The Gothon stops, waits, then busts out \nlaughing. While he's laughing, you shoot him \nsquare in the head, putting him down. You then \njump through the armory door.",
+"F"
+]
+
+centralcorridor_else_ = [
+"\nPlease pick one of the choices. \nLet's pretend nothing stupid happened and move on to \nthe next chapter.",
+"F"
+]
+###############################################
+laserweaponarmory_ = [
+"\nYou do a dive roll into the armory, crouch and \nscan the room for more Gothons that might be hiding. \nIt's dead quiet... \n\nYou stand up and run to the far side of the room. \nYou find the neutron bomb in its container. There\'s \na keypad lock on the box. You need the code to get the \nbomb out. You can take guesses. But after 10 \nattempts, you know the lock will close forever. \n\nThe code is 3 digits.",
+"F"
+]
+
+laserweaponarmory_hunch_ = [
+"Just between you and me... the code begins with: ",
+"F"
+]
+
+laserweaponarmory_tip_ = [
+"OK, OK, the code is: ",
+"F"
+]
+
+laserweaponarmory_code_ = [
+"\nThe container clicks open, the seal breaks, letting \ngas out. You grab the neutron bomb. You run as \nquickly as you can to the bridge. Smart choice. \nOver there, you know the blast will destroy the ship.",
+"F"
+]
+
+laserweaponarmory_else_ = [
+"The lock buzzes one last time. You hear a \nsickening melting sound. The mechanism is fused \ntogether. You decide to sit there. \n\nTime passes... and passes... \n\nFinally, you hear some minor explosions? \nSoon, the temperature falls, air pressure drops, \noxygen becomes scarcer… They blew up the \natmospheric generator!! \n\nYou fall into a faint… to never wake up again.",
+"F"
+]
+###############################################
+thebridge_ = [
+"\nYou burst onto the bridge with the neutron bomb \nunder your arm. You surprise 5 Gothons. They are \ntrying to take control of the ship. They haven't \npulled their weapons out yet, as they see the active \nbomb under your arm and don't want to set it off. \n\nWhat do you do? \n[a] throw the bomb \n[b] slowly place the bomb",
+"F"
+]
+
+thebridge_throw_ = [
+"\nIn a panic, you trigger off the timer, throw the \nbomb and make a leap for the door. Right as you \ndrop it, a Gothon shoots you right in the back, \nkilling you. As you die you see another Gothon \nfrantically trying to disarm the bomb. They got you, \nbut they won't get this ship.",
+"F"
+]
+
+thebridge_slowly_ = [
+"\nYou point your blaster at the bomb under your arm. \nThe Gothons put their hands up and start to sweat. \nYou inch backward to the door, open it, and then \ncarefully place the bomb on the floor, pointing your \nblaster at it. Then you set off the timer, jump back \nthrough the door, punch the close button and blast \nthe lock. Now you run to the escape pods to get off \nthis tin can.",
+"F"
+]
+
+thebridge_else_ = [
+"\nPlease pick one of the choices. \nLet's pretend nothing stupid happened and move on to \nthe next chapter.",
+"F"
+]
+###############################################
+escapepod_ = [
+"\nYou rush through the ship desperately, before the \nwhole place explodes. It seems like hardly any \nGothons are on the ship. You get to the chamber \nwith the escape pods. Now, you need to pick one. \nThey could be damaged, but you don't have time to \ncheck them out. \n\nThere are 5 pods, which one do you take?",
+"F"
+]
+
+escapepod_not_ = [
+"\nYou jump into pod %s and hit the eject button. The \npod escapes out into the void of space, then \nimplodes as the hull ruptures, crushing your body \ninto jam jelly.",
+"F%s"
+]
+
+escapepod_else_ = [
+"\nYou jump into pod %s and hit the eject button. The \npod easily slides out into space, heading to the \nplanet below. You look back and see your ship \nexplode like a bright star, taking out the Gothon \nship at the same time…",
+"F%s"
+]
+###############################################
+win_ = [
+"\nYou made it! \nAnd the enemy hasn't captured your technologies. \nA true hero. \n\nTHE END\n",
+"F"
+]
+###############################################
+final_ = [
+"\nBut wait... Just like in any good movie, \nwe are not over. A Gothon was hidden in the pod! \n\n%s, You are now facing a %s boss!\nYou will have to fight, bare hands!! Isn't it epic? \n\nAh, remember that you wear a smart suit. Don't \nworry against concussions or minor injuries. Your \nintegrated health pack will inject you healing serum.  \nYour enemy has this natural ability too. Only your suit \nis more effective!",
+"F%s%s"
+]
+###############################################
+stats_ = [
+"Your adversary is stronger (Power: %s) than you (Power: %s). \nHowever, with your special suit, you recover faster (Rate: %s) \nthan the vilain (Rate: %s).",
+"F,%s%s%s%s"
+]
+
+hp_hero_ = [
+"Your HP: %d",
+"F%d"
+]
+
+hp_monster_ = [
+"%s's HP: %d\n",
+"F%s%d"
+]
+
+what_ = [
+"What do you do?",
+"F"
+]
+
+what_attack_ = [
+"[1]  Attack",
+"F"
+]
+
+what_defend_ = [
+"[2]  Remain defensive, and recover",
+"F"
+]
+
+what_except_ = [
+"Please enter a number!!",
+"F"
+]
+
+what_no_ = [
+"What? No such action! Stick to the script!",
+"F"
+]
+
+hero_hp_ = [
+"\nUnfortunately, this blow is fatal to you.",
+"F"
+]
+
+monster_hp_ = [
+"\nI think you fatally hit the weak point... The Gothon collapses.",
+"F"
+]
+
+attack_ = [
+"%s attacks %s. %s's HP decreased by %d points.",
+"F%s%s%s%d"
+]
+
+special_attack_ = [
+"%s throws a powerful blow to the %s. %s's HP decreased by %d points.",
+"F%s%s%s%d"
+]
+
+devastating_attack_ = [
+"%s finds a weak point. %s's HP decreased by %d points.",
+"F%s%s%d"
+]
+
+defend_ = [
+"%s is defending.",
+"F%s"
+]
+
+rest_ = [
+"After resting, %s's HP increased by %d.",
+"F%s%d"
+]
+###############################################
