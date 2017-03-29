@@ -11,8 +11,7 @@ Based on Exercise 43, from [Learn Python the Hard Way](http://learnpythonthehard
 ```text
 └───gothon_project
     ├───bin
-    ├───gothonmap
-    └───tests (not completed)
+    └───gothonmap
 ```
 
 - The 'bin' subdir contains the script `engine.py`. The engine refers to a map or story, in the 'gothonmap' subdir to generate an interactive story. The 'tests' subdir is for testing the scripts.
