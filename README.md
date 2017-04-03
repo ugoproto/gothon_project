@@ -2,7 +2,7 @@
 
 A little python app.
 
-*Download the app (see 'Use', below).*
+*Download the app (see [Use](#use), below).*
 
 Based on Exercise 43, from [Learn Python the Hard Way](http://learnpythonthehardway.org) by Zed Shaw, with a couple of bells and whistles. First, the same app runs in either French or English. Second, we added a final interactive fight. Interactive it is as the rest of the story. A tiny story that can be completed in a few minutes, after some trials and errors. Because an error leads to a fatal epilogue... With a little patience, anyone can successfully complete the story. Although there are some code-breaking challenges, since this is a proof-of-concept, we provide the keys. However, anyone can choose to test the game. 
 
