@@ -2,11 +2,15 @@
 
 A little python app.
 
-Based on Exercise 43, from [Learn Python the Hard Way](http://learnpythonthehardway.org) by Zed Shaw, with a couple of bells and whistles..
+*Download the app (see 'Use', below).*
+
+Based on Exercise 43, from [Learn Python the Hard Way](http://learnpythonthehardway.org) by Zed Shaw, with a couple of bells and whistles. First, the same app runs in either French or English. Second, we added a final interactive fight. Interactive it is as the rest of the story. A tiny story that can be completed in a few minutes, after some trials and errors. Because an error leads to a fatal epilogue... With a little patience, anyone can successfully complete the story. Although there are some code-breaking challenges, since this is a proof-of-concept, we provide the keys. However, anyone can choose to test the game. 
+
+## Clone
 
 - Project name: gothon_project (the parent directory).
-- The project runs on Python 2.7.
-- Clone the project; on your PC, the project directory must organized as follow.
+- The project runs on Python 2. It could easily be migrated to Python 3. 
+- Clone the project; on your PC, the project directory must be organized as follow.
 
 ```text
 └───gothon_project
@@ -34,3 +38,13 @@ $env:PYTHONPATH = "$env:PYTHONPATH;."
 - For Windows, you might need to try `py -2 bin/engine.py` or `py -2.7 bin/engine.py`.
 - Consult the Python documentation otherwise.
 - Have fun!
+
+## Use
+
+- Compiled with cx-Freeze (group of files).
+-Zip files. Download the files. Unzip the files. Go in the folder-files and find the executable (.exe); launch it. You can simply delete folder-files.
+    - LINK
+- Compiled with cx-Freeze (Windows distribution `msi`). Download the distribution file. Launch it and install the 'program' in the folder of your choice (it suggests a 'C:\...\program...' folder, but your can choose the 'desktop'). Go in the installed files and find the executable (.exe); launch it. Launch the distribution file again; this time, remove the 'program'.
+    - LINK
+- Compiled with pyInstaller (single-file option). Download the executable file. Launch it. You can simply delete file.
+    - LINK
