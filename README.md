@@ -21,7 +21,7 @@ Based on Exercise 43, from [Learn Python the Hard Way](http://learnpythonthehard
 - The 'bin' subdir contains the script `engine.py`. The engine refers to a map or story, in the 'gothonmap' subdir to generate an interactive story. The 'tests' subdir is for testing the scripts.
 - In your terminal, at the 'gothon_project' level, launch the app with `python2 bin/engine.py`.
 - If the Python script fails to launch the website, you might have a path problem; you must set the path for the project to execute.
-- For Linux/MacOSX users, please execute in the terminal:
+- For Linux/Mac OS X users, please execute in the terminal:
 
 ```bash
 export PYTHONPATH=$PYTHONPATH:.
